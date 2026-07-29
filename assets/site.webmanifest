@@ -1,0 +1,12 @@
+{
+  "name": "t4-digital",
+  "short_name": "t4-digital",
+  "description": "Making Digital Simple — web, data, AI and programming services for small businesses.",
+  "icons": [
+    { "src": "icon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "icon-512.png", "sizes": "512x512", "type": "image/png" }
+  ],
+  "theme_color": "#123A66",
+  "background_color": "#FFFFFF",
+  "display": "browser"
+}
