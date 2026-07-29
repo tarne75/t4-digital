@@ -47,6 +47,17 @@
     var status = document.getElementById("form-status");
     form.addEventListener("submit", function (e) {
       e.preventDefault();
+
+      /* Require the reCAPTCHA checkbox to be ticked before submitting */
+      if (window.grecaptcha && form.querySelector(".g-recaptcha")) {
+        var recaptchaResponse = grecaptcha.getResponse();
+        if (!recaptchaResponse || recaptchaResponse.length === 0) {
+          status.className = "form-status err";
+          status.textContent = "Please tick the “I'm not a robot” box before sending.";
+          return;
+        }
+      }
+
       var btn = form.querySelector("button[type=submit]");
       btn.disabled = true;
       btn.textContent = "Sending…";
@@ -58,6 +69,7 @@
         .then(function (res) {
           if (res.ok) {
             form.reset();
+            if (window.grecaptcha) grecaptcha.reset();
             status.className = "form-status ok";
             status.textContent = "Thanks — your message has been sent. We'll reply within one working day.";
           } else {
