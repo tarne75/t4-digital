@@ -335,6 +335,69 @@ section { padding: 80px 0; }
   border-radius: 999px;
 }
 
+/* ---------- Mini portfolio carousel ---------- */
+.mini-carousel-wrap { position: relative; }
+
+.mini-carousel {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  scroll-snap-type: x proximity;
+  scroll-behavior: smooth;
+  padding: 4px 4px 20px;
+  -webkit-overflow-scrolling: touch;
+}
+
+.mini-carousel::-webkit-scrollbar { height: 8px; }
+.mini-carousel::-webkit-scrollbar-track { background: var(--grey-light); border-radius: 999px; }
+.mini-carousel::-webkit-scrollbar-thumb { background: var(--grey-mid); border-radius: 999px; }
+.mini-carousel::-webkit-scrollbar-thumb:hover { background: var(--blue); }
+
+.mini-card {
+  flex: 0 0 auto;
+  scroll-snap-align: start;
+  width: 300px;
+  background: var(--white);
+  border: 1px solid var(--grey-mid);
+  border-radius: var(--radius);
+  overflow: hidden;
+  transition: border-color 0.18s ease, transform 0.18s ease;
+}
+.mini-card:hover { border-color: var(--blue); transform: translateY(-3px); }
+
+.mini-card img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 8 / 5;
+  object-fit: cover;
+  border-bottom: 1px solid var(--grey-light);
+}
+
+.mini-card-body { padding: 18px 20px 20px; }
+.mini-card-body h3 { font-size: 1.02rem; margin-bottom: 5px; }
+.mini-card-body p { color: var(--grey-text); font-size: 0.88rem; margin-bottom: 12px; }
+.mini-card-body .card-link { font-size: 0.85rem; margin-top: 0; }
+
+.carousel-arrows { display: flex; gap: 10px; justify-content: center; margin-top: 4px; }
+.carousel-arrow {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1px solid var(--grey-mid);
+  background: var(--white);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: border-color 0.15s ease, background 0.15s ease;
+}
+.carousel-arrow:hover { border-color: var(--blue); background: var(--grey-light); }
+.carousel-arrow svg { width: 20px; height: 20px; stroke: var(--navy); }
+
+@media (max-width: 640px) {
+  .mini-card { width: 240px; }
+}
+
 /* ---------- Feature rows (why us) ---------- */
 .feature-grid {
   display: grid;

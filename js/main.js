@@ -37,6 +37,20 @@
     revealEls.forEach(function (el) { el.classList.add("visible"); });
   }
 
+  /* Mini portfolio carousel arrows */
+  var carousel = document.getElementById("mini-carousel");
+  var prevBtn = document.getElementById("carousel-prev");
+  var nextBtn = document.getElementById("carousel-next");
+  if (carousel && prevBtn && nextBtn) {
+    var scrollByCard = function (dir) {
+      var card = carousel.querySelector(".mini-card");
+      var amount = card ? card.getBoundingClientRect().width + 20 : 300;
+      carousel.scrollBy({ left: dir * amount, behavior: "smooth" });
+    };
+    prevBtn.addEventListener("click", function () { scrollByCard(-1); });
+    nextBtn.addEventListener("click", function () { scrollByCard(1); });
+  }
+
   /* Footer year */
   var yearEl = document.getElementById("year");
   if (yearEl) yearEl.textContent = new Date().getFullYear();
