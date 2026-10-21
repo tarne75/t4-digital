@@ -311,8 +311,8 @@ section { padding: 80px 0; }
 /* ---------- Portfolio ---------- */
 .portfolio-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 26px;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
 }
 @media (max-width: 800px) { .portfolio-grid { grid-template-columns: 1fr; } }
 
@@ -335,9 +335,9 @@ section { padding: 80px 0; }
   border-bottom: 1px solid var(--grey-light);
 }
 
-.portfolio-body { padding: 26px 28px; display: flex; flex-direction: column; flex-grow: 1; }
-.portfolio-body h3 { margin-bottom: 8px; }
-.portfolio-body p { color: var(--grey-text); font-size: 0.97rem; flex-grow: 1; }
+.portfolio-body { padding: 22px 22px 24px; display: flex; flex-direction: column; flex-grow: 1; }
+.portfolio-body h3 { font-size: 1.1rem; margin-bottom: 8px; }
+.portfolio-body p { color: var(--grey-text); font-size: 0.93rem; flex-grow: 1; }
 
 .portfolio-tags { display: flex; flex-wrap: wrap; gap: 8px; margin: 16px 0 18px; }
 .portfolio-tags span {
@@ -772,3 +772,7 @@ section { padding: 80px 0; }
 @media (max-width: 768px) {
   .js .reveal { opacity: 1; transform: none; transition: none; }
 }
+
+/* 3 mini cards fit on desktop, so arrows only needed on narrower screens */
+@media (min-width: 1000px) { .carousel-arrows { display: none; } }
+@media (min-width: 1000px) { .mini-carousel { justify-content: center; } }
