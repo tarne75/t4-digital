@@ -1,11 +1,11 @@
 /* ============================================================
-   t4-digital — Making Digital Simple
-   Design system: BRAND.md — Navy #123A66, Bright Blue #2F80ED,
+   t4-digital - Making Digital Simple
+   Design system: BRAND.md - Navy #123A66, Bright Blue #2F80ED,
    Charcoal #2F343B, Light Grey #F5F7FA, Mid Grey #C8D0DA
    Flat design, no gradients, no shadows, rounded corners.
    ============================================================ */
 
-/* Self-hosted Manrope (latin subset, variable 200-800) — avoids a render-blocking third-party request */
+/* Self-hosted Manrope (latin subset, variable 200-800) - avoids a render-blocking third-party request */
 @font-face {
   font-family: "Manrope";
   font-style: normal;
@@ -768,7 +768,7 @@ section { padding: 80px 0; }
   .card:hover { transform: none; }
 }
 
-/* Mobile: show everything immediately — no hidden content before JS runs (helps LCP/paint metrics) */
+/* Mobile: show everything immediately - no hidden content before JS runs (helps LCP/paint metrics) */
 @media (max-width: 768px) {
   .js .reveal { opacity: 1; transform: none; transition: none; }
 }

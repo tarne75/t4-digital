@@ -1,4 +1,4 @@
-/* t4-digital — shared behaviour (vanilla JS, no dependencies) */
+/* t4-digital - shared behaviour (vanilla JS, no dependencies) */
 (function () {
   "use strict";
 
@@ -55,7 +55,7 @@
   var yearEl = document.getElementById("year");
   if (yearEl) yearEl.textContent = new Date().getFullYear();
 
-  /* Contact form — AJAX submit to Formspree so the user stays on-page */
+  /* Contact form - AJAX submit to Formspree so the user stays on-page */
   var form = document.getElementById("contact-form");
   if (form) {
     var status = document.getElementById("form-status");
@@ -85,7 +85,7 @@
             form.reset();
             if (window.grecaptcha) grecaptcha.reset();
             status.className = "form-status ok";
-            status.textContent = "Thanks — your message has been sent. We'll reply within one working day.";
+            status.textContent = "Thanks - your message has been sent. We'll reply within one working day.";
           } else {
             throw new Error("Formspree error");
           }
