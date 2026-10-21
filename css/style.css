@@ -357,7 +357,7 @@ section { padding: 80px 0; }
   gap: 20px;
   overflow-x: auto;
   scroll-snap-type: x proximity;
-  scroll-behavior: smooth;
+  /* No CSS scroll-behavior here: smooth + snap stops Lighthouse recording LCP (NO_LCP). Arrow buttons use JS smooth scroll. */
   padding: 4px 4px 20px;
   -webkit-overflow-scrolling: touch;
 }
