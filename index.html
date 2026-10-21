@@ -30,9 +30,7 @@
   <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
   <link rel="manifest" href="assets/site.webmanifest">
   <meta name="theme-color" content="#123A66">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="preload" href="assets/fonts/manrope-latin.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -266,7 +264,7 @@
       </div>
       <div class="portfolio-grid">
         <a class="portfolio-card reveal" href="https://pottersbargarage.co.uk" target="_blank" rel="noopener">
-          <img src="assets/portfolio-pbg.jpg" alt="Potters Bar Garage website homepage" loading="lazy" width="880" height="550">
+          <img src="assets/portfolio-pbg.webp" alt="Potters Bar Garage website homepage" loading="lazy" width="880" height="550">
           <div class="portfolio-body">
             <h3>Potters Bar Garage</h3>
             <p>A family-run Hertfordshire garage — full site with service pages, vehicle sales and online booking enquiries.</p>
@@ -275,7 +273,7 @@
           </div>
         </a>
         <a class="portfolio-card reveal" href="https://karatekidshemel.co.uk" target="_blank" rel="noopener">
-          <img src="assets/portfolio-kkh.jpg" alt="Karate Kids Hemel website homepage" loading="lazy" width="880" height="550">
+          <img src="assets/portfolio-kkh.webp" alt="Karate Kids Hemel website homepage" loading="lazy" width="880" height="550">
           <div class="portfolio-body">
             <h3>Karate Kids Hemel</h3>
             <p>Sasori Karate Dojo — class schedules, locations, pricing and online registration for a Hemel Hempstead karate club.</p>
@@ -298,7 +296,7 @@
       <div class="mini-carousel-wrap">
         <div class="mini-carousel reveal" id="mini-carousel">
           <a class="mini-card" href="https://tarne75.github.io/richards-treecare-alt/" target="_blank" rel="noopener">
-            <img src="assets/mini-treecare.jpg" alt="Richard's Tree Care website homepage" loading="lazy" width="640" height="400">
+            <img src="assets/mini-treecare.webp" alt="Richard's Tree Care website homepage" loading="lazy" width="640" height="400">
             <div class="mini-card-body">
               <h3>Richard's Tree Care</h3>
               <p>Tree surgeon site for St Albans &amp; Harpenden — services, gallery and quote form.</p>
@@ -306,7 +304,7 @@
             </div>
           </a>
           <a class="mini-card" href="https://tarne75.github.io/thebarberguys-alt/" target="_blank" rel="noopener">
-            <img src="assets/mini-barberguys.jpg" alt="The Barber Guys website homepage" loading="lazy" width="640" height="400">
+            <img src="assets/mini-barberguys.webp" alt="The Barber Guys website homepage" loading="lazy" width="640" height="400">
             <div class="mini-card-body">
               <h3>The Barber Guys</h3>
               <p>Potters Bar barbershop — pricing, gallery and booking details.</p>
@@ -314,7 +312,7 @@
             </div>
           </a>
           <a class="mini-card" href="https://tarne75.github.io/desmoshed-alt/" target="_blank" rel="noopener">
-            <img src="assets/mini-desmoshed.jpg" alt="Desmo Shed website homepage" loading="lazy" width="640" height="400">
+            <img src="assets/mini-desmoshed.webp" alt="Desmo Shed website homepage" loading="lazy" width="640" height="400">
             <div class="mini-card-body">
               <h3>Desmo Shed</h3>
               <p>Independent Ducati specialist in Barnet — services, fees and enquiry form.</p>
@@ -322,7 +320,7 @@
             </div>
           </a>
           <a class="mini-card" href="https://tarne75.github.io/borehamwoodchiropody-alt/" target="_blank" rel="noopener">
-            <img src="assets/mini-chiropody.jpg" alt="Borehamwood Chiropody & Podiatry website homepage" loading="lazy" width="640" height="400">
+            <img src="assets/mini-chiropody.webp" alt="Borehamwood Chiropody & Podiatry website homepage" loading="lazy" width="640" height="400">
             <div class="mini-card-body">
               <h3>Borehamwood Chiropody &amp; Podiatry</h3>
               <p>Clinic site with treatments, fees and online booking enquiry.</p>
@@ -366,7 +364,7 @@
         <p>Making Digital Simple. Based in Potters Bar, we help businesses across Hertfordshire, London and beyond build, improve and simplify their digital world.</p>
       </div>
       <div>
-        <h4>Services</h4>
+        <div class="footer-title">Services</div>
         <ul>
           <li><a href="services.html#web-presence">Web Presence</a></li>
           <li><a href="services.html#dns-infrastructure">DNS &amp; Infrastructure</a></li>
@@ -377,7 +375,7 @@
         </ul>
       </div>
       <div>
-        <h4>Quick Links</h4>
+        <div class="footer-title">Quick Links</div>
         <ul>
           <li><a href="index.html">Home</a></li>
           <li><a href="pricing.html">Pricing</a></li>
@@ -386,7 +384,7 @@
         </ul>
       </div>
       <div>
-        <h4>Contact</h4>
+        <div class="footer-title">Contact</div>
         <ul>
           <li><a href="mailto:hello@t4-digital.uk">hello@t4-digital.uk</a></li>
           <li><a href="contact.html">Send us a message</a></li>

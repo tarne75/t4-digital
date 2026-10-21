@@ -5,10 +5,21 @@
    Flat design, no gradients, no shadows, rounded corners.
    ============================================================ */
 
+/* Self-hosted Manrope (latin subset, variable 200-800) — avoids a render-blocking third-party request */
+@font-face {
+  font-family: "Manrope";
+  font-style: normal;
+  font-weight: 200 800;
+  font-display: swap;
+  src: url("../assets/fonts/manrope-latin.woff2") format("woff2");
+}
+
 :root {
   --navy: #123A66;
   --blue: #2F80ED;
   --blue-dark: #1F6BD4;
+  --blue-ui: #1F6BD4;       /* AA-contrast blue for text, links and button backgrounds (5.1:1 on white) */
+  --blue-ui-dark: #1859B3;
   --white: #FFFFFF;
   --charcoal: #2F343B;
   --grey-light: #F5F7FA;
@@ -37,8 +48,8 @@ body {
 
 img, svg { display: block; max-width: 100%; }
 
-a { color: var(--blue); text-decoration: none; }
-a:hover { color: var(--blue-dark); }
+a { color: var(--blue-ui); text-decoration: none; }
+a:hover { color: var(--blue-ui-dark); }
 
 h1, h2, h3, h4 { color: var(--navy); line-height: 1.2; font-weight: 800; }
 
@@ -63,7 +74,7 @@ section { padding: 80px 0; }
 
 .kicker {
   display: inline-block;
-  color: var(--blue);
+  color: var(--blue-ui);
   font-weight: 700;
   font-size: 0.85rem;
   text-transform: uppercase;
@@ -85,8 +96,8 @@ section { padding: 80px 0; }
   text-align: center;
 }
 
-.btn-primary { background: var(--blue); color: var(--white); }
-.btn-primary:hover { background: var(--blue-dark); color: var(--white); }
+.btn-primary { background: var(--blue-ui); color: var(--white); }
+.btn-primary:hover { background: var(--blue-ui-dark); color: var(--white); }
 
 .btn-secondary { background: transparent; color: var(--navy); border-color: var(--grey-mid); }
 .btn-secondary:hover { border-color: var(--navy); color: var(--navy); }
@@ -118,6 +129,8 @@ section { padding: 80px 0; }
 .logo { display: flex; align-items: center; gap: 10px; }
 .logo svg { height: 40px; width: auto; }
 .header-email {
+  display: inline-block;
+  padding: 4px 0;
   font-size: 0.8rem;
   font-weight: 600;
   color: var(--grey-text);
@@ -139,15 +152,15 @@ section { padding: 80px 0; }
 }
 
 .main-nav a:hover { color: var(--navy); background: var(--grey-light); }
-.main-nav a.active { color: var(--blue); }
+.main-nav a.active { color: var(--blue-ui); }
 
 .main-nav .nav-cta {
-  background: var(--blue);
+  background: var(--blue-ui);
   color: var(--white);
   margin-left: 10px;
   padding: 10px 22px;
 }
-.main-nav .nav-cta:hover { background: var(--blue-dark); color: var(--white); }
+.main-nav .nav-cta:hover { background: var(--blue-ui-dark); color: var(--white); }
 
 .nav-toggle {
   display: none;
@@ -188,7 +201,7 @@ section { padding: 80px 0; }
   align-items: center;
 }
 
-.hero h1 span { color: var(--blue); }
+.hero h1 span { color: var(--blue-ui); }
 
 .hero-sub {
   margin: 22px 0 32px;
@@ -286,6 +299,7 @@ section { padding: 80px 0; }
 .card p { color: var(--grey-text); font-size: 0.98rem; flex-grow: 1; }
 
 .card-link {
+  padding: 8px 0;
   margin-top: 18px;
   font-weight: 700;
   font-size: 0.95rem;
@@ -441,7 +455,7 @@ section { padding: 80px 0; }
   height: 54px;
   margin: 0 auto 18px;
   border-radius: 50%;
-  background: var(--blue);
+  background: var(--blue-ui);
   color: var(--white);
   font-weight: 800;
   font-size: 1.3rem;
@@ -526,7 +540,7 @@ section { padding: 80px 0; }
   top: -14px;
   left: 50%;
   transform: translateX(-50%);
-  background: var(--blue);
+  background: var(--blue-ui);
   color: var(--white);
   font-size: 0.78rem;
   font-weight: 700;
@@ -631,7 +645,8 @@ section { padding: 80px 0; }
   gap: 56px;
   align-items: start;
 }
-@media (max-width: 880px) { .contact-grid { grid-template-columns: 1fr; } }
+@media (max-width: 880px) { .contact-grid { grid-template-columns: minmax(0, 1fr); } }
+.contact-grid > * { min-width: 0; }
 
 .contact-info h2 { margin-bottom: 16px; }
 .contact-info > p { color: var(--grey-text); margin-bottom: 28px; }
@@ -689,7 +704,15 @@ section { padding: 80px 0; }
 
 .recaptcha-group { display: flex; justify-content: center; }
 .recaptcha-group > div { transform-origin: center; }
-@media (max-width: 340px) { .recaptcha-group > div { transform: scale(0.9); } }
+@media (max-width: 420px) {
+  .contact-form { padding: 28px 20px; }
+  .recaptcha-group { justify-content: flex-start; height: 68px; overflow: hidden; }
+  .recaptcha-group > div { transform: scale(0.85); transform-origin: 0 0; }
+}
+@media (max-width: 350px) {
+  .recaptcha-group { height: 60px; }
+  .recaptcha-group > div { transform: scale(0.74); }
+}
 
 .form-status { margin-top: 16px; font-weight: 600; display: none; }
 .form-status.ok { display: block; color: #1E7A46; }
@@ -710,7 +733,7 @@ section { padding: 80px 0; }
 .footer-brand svg { height: 42px; width: auto; margin-bottom: 16px; }
 .footer-brand p { font-size: 0.92rem; max-width: 34ch; }
 
-.site-footer h4 {
+.site-footer .footer-title {
   color: var(--white);
   font-size: 0.95rem;
   text-transform: uppercase;
@@ -719,8 +742,8 @@ section { padding: 80px 0; }
 }
 
 .site-footer ul { list-style: none; }
-.site-footer ul li { margin-bottom: 10px; }
-.site-footer a { color: #B8CCE6; }
+.site-footer ul li { margin-bottom: 4px; }
+.site-footer a { color: #B8CCE6; display: inline-block; padding: 5px 0; }
 .site-footer a:hover { color: var(--white); }
 
 .footer-bottom {
@@ -728,7 +751,7 @@ section { padding: 80px 0; }
   padding: 22px 0;
   text-align: center;
   font-size: 0.88rem;
-  color: #7E9CC4;
+  color: #9FBBDF;
 }
 
 /* ---------- Reveal animation (minimal; only active when JS present) ---------- */
@@ -743,4 +766,9 @@ section { padding: 80px 0; }
   html { scroll-behavior: auto; }
   .reveal { opacity: 1; transform: none; transition: none; }
   .card:hover { transform: none; }
+}
+
+/* Mobile: show everything immediately — no hidden content before JS runs (helps LCP/paint metrics) */
+@media (max-width: 768px) {
+  .js .reveal { opacity: 1; transform: none; transition: none; }
 }
